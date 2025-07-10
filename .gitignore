@@ -3,6 +3,16 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
 # C extensions
 *.so
 
