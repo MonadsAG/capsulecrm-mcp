@@ -1,161 +1,115 @@
 # 🚀 CapsuleCRM MCP Server
 
-Transform your CRM workflow with AI! This MCP (Model Context Protocol) server connects Claude AI directly to your CapsuleCRM account, enabling natural language interactions with your customer data.
+Transform your CRM workflow with AI! 🤖✨ Connect Claude directly to your CapsuleCRM account for natural language customer and sales management.
 
-## ✨ What This Server Does
+## 🎯 What it does
 
-This server acts as a bridge between Claude AI and your CapsuleCRM account, allowing you to:
+- 🗣️ **Talk to your CRM in plain English** - "Show me all VIP customers from last month"
+- 🔍 **Smart search and filtering** - Find exactly what you need with powerful queries
+- 📊 **Get instant insights** - Query sales pipeline, customer data, and tasks
+- ⚡ **Automate routine tasks** - Create, update, and manage CRM data through conversation
 
-- 🗣️ **Talk to your CRM in plain English** - Ask questions like "Show me all VIP customers from last month" or "Create a new opportunity for Acme Corp"
-- 🔍 **Smart search and filtering** - Find exactly what you need using powerful search capabilities
-- 📊 **Get instant insights** - Query your sales pipeline, customer data, and tasks without clicking through CapsuleCRM's interface
-- ⚡ **Automate routine tasks** - Create, update, and manage CRM data through conversational AI
+## 🎉 Installation
 
-## 🎯 Key Capabilities
+### 🖥️ Claude Desktop 
+1. 📥 Download the `capsulecrm-mcp.dxt` file
+2. 👆 Double-click to install in Claude Desktop
+3. 🔑 Enter your CapsuleCRM API key when prompted
+4. 🎊 Start using natural language CRM commands!
 
-### 👥 Customer Management (Parties)
-- **View all customers**: List people and organizations with pagination
-- **Smart search**: Find customers by name, email, phone, or address
-- **Advanced filtering**: Filter by tags, location, contact info, and more
-- **Full CRUD operations**: Create, read, update customer records
-- **Rich details**: Access complete contact information, addresses, and custom fields
+## 🔑 Getting Your API Key
 
-### 💼 Sales Pipeline (Opportunities)
-- **Track deals**: Monitor all sales opportunities and their progress
-- **Value calculations**: Automatic probability-weighted values for accurate reporting
-- **Pipeline stages**: View and update opportunities through different milestones
-- **Comprehensive filtering**: Find deals by status, owner, value, close date, and more
-- **Revenue insights**: Get real-time view of your sales pipeline value
+1. 🌐 Log in to your CapsuleCRM dashboard
+2. ⚙️ Go to **Account Settings** → **API**
+3. ✨ Generate a new API token
+4. 💾 Copy and store securely (you won't see it again!)
 
-### ✅ Task Management
-- **Stay organized**: View, create, and update tasks across your team
-- **Status tracking**: Filter tasks by open, completed, or pending status
-- **Due date management**: Track deadlines and overdue items
-- **Assignment control**: See who's responsible for what
-- **Context awareness**: Link tasks to specific customers or deals
+## 💡 Usage Examples
 
-### 🎯 Pipeline Configuration
-- **Milestone overview**: View all pipeline stages and their settings
-- **Progress tracking**: Understand where opportunities stand in your sales process
+### 👥 Customer Management
+- 🔍 "Find all VIP customers in New York"
+- 📅 "Show me customers we haven't contacted in 30 days"
+- ➕ "Create a new person: John Smith, john@acme.com"
 
-## 🔧 Advanced Search Features
-
-### Simple Text Search
-```
-"Find customers named John"
-"Show me tasks due this week"
-"Search for opportunities with 'software' in the name"
-```
-
-### Powerful Filtering
-```
-Filter customers by:
-- 🏷️ Tags (VIP, Hot Lead, etc.)
-- 📍 Location (city, country)
-- 👤 Owner/Team assignment
-- 📅 Date ranges (added, updated, last contacted)
-
-Filter opportunities by:
-- 📈 Status (open, closed, won, lost)
-- 💰 Value ranges
-- 🎯 Pipeline stages
-- 👥 Assigned owners
-- 📅 Expected close dates
-
-Filter tasks by:
-- ✅ Status (open, completed, pending)
-- 👤 Assignee
-- 📅 Due dates
-- 🏷️ Categories and tags
-```
-
-### Advanced Operator Support
-Use sophisticated filtering with operators like:
-- `contains` - Find partial matches
-- `starts with` / `ends with` - Prefix/suffix matching
-- `is after` / `is before` - Date comparisons
-- `is greater than` / `is less than` - Numerical comparisons
-- `is within last` - Recent time periods
-
-## 🚀 Getting Started
-
-### Prerequisites
-- CapsuleCRM account with API access
-- Claude desktop app or compatible MCP client
-- Your CapsuleCRM API token
-
-### Quick Setup
-1. **Get your API token** from CapsuleCRM (Account Settings → API)
-2. **Set environment variable**: `CAPSULECRM_ACCESS_TOKEN=your_token_here`
-3. **Install dependencies**: `pip install -r requirements.txt`
-4. **Run the server**: `python mcp_server.py`
-
-### Connect to Claude
-Add this server to your Claude desktop configuration to start using natural language CRM commands!
-
-## 💡 Example Use Cases
-
-### 📊 Sales Reporting
-- "What's the total value of our open opportunities?"
-- "Show me all deals closing this quarter"
-- "Which opportunities have the highest probability?"
-
-### 👥 Customer Insights
-- "Find all VIP customers in New York"
-- "Show me customers we haven't contacted in 30 days"
-- "List all organizations in the technology sector"
+### 💰 Sales Pipeline
+- 💎 "What's the total value of our open opportunities?"
+- 📈 "Show me deals closing this quarter"
+- 🎯 "Create a new opportunity for Acme Corp worth $25,000"
 
 ### ✅ Task Management
-- "What tasks are overdue?"
-- "Show me all tasks assigned to Sarah"
-- "Create a follow-up task for next week"
+- ⏰ "What tasks are overdue?"
+- 👩‍💼 "Show me all tasks assigned to Sarah"
+- 📝 "Create a follow-up task for next Friday"
 
-### 🔍 Data Discovery
-- "Find opportunities over $50,000"
-- "Show me customers added this month"
-- "Which deals are stuck in the proposal stage?"
+### 🔮 Advanced Filtering
+Ask complex questions like:
+- 💵 "Find opportunities worth more than $50,000 that are in proposal stage"
+- 🏷️ "Show me customers added in the last 30 days with hot-lead tags"
+- 👥 "List all overdue tasks assigned to my team"
 
-## 🔧 Technical Features
+## 🎪 Capabilities
 
-### 🎯 User-Centric Design
-- **Privacy-friendly**: No internal IDs exposed to users
-- **Calculated values**: Automatic probability-weighted opportunity values
-- **Smart value handling**: Supports both per-unit and total value types for opportunities
-- **Rich documentation**: All tools and models clearly documented for AI understanding
+**👥 Customer Management (Parties)**
+- 👀 View, create, update people and organizations
+- 🔎 Search by name, email, phone, address
+- 🏷️ Filter by tags, location, contact info
 
-### 🔍 Intelligent Search
-- **Automatic method selection**: Uses search vs. filter based on query type
-- **Multiple operators**: Support for 8+ filter operators
-- **Flexible syntax**: Two ways to specify operators in queries
-- **Pagination support**: Handle large datasets efficiently
+**💼 Sales Pipeline (Opportunities)**
+- 📊 Track deals and progress through stages
+- 🎲 Automatic probability-weighted values
+- 🔍 Comprehensive filtering and search
+- 💰 Revenue insights and reporting
 
-### 💰 Opportunity Value Logic
-When creating opportunities, specify whether the value is:
-- **Per unit** (`value_type: "per_unit"`): e.g., $1000 per month
-- **Total** (`value_type: "total"`): e.g., $6000 total for 6 months
+**✅ Task Management**
+- 📋 Create, view, and update tasks
+- 🎯 Filter by status, assignee, due dates
+- 🔗 Link tasks to customers and deals
 
-The server automatically calculates:
-- **Total value**: Base amount × duration
-- **Current value**: Probability-weighted value for reporting
+**🎯 Pipeline Configuration**
+- 📈 View all pipeline milestones
+- 🚀 Track opportunity progress through stages
+
+## 🔧 Search Operators
+
+- 🔍 `contains` - Find partial matches
+- 🎯 `starts with` / `ends with` - Prefix/suffix matching
+- 📅 `is after` / `is before` - Date comparisons
+- 📊 `is greater than` / `is less than` - Numerical filtering
+- ⏰ `is within last` - Recent time periods
+
+## 🚨 Troubleshooting
+
+**🚫 Extension won't start:**
+- ✅ Verify your API key is correct
+- 🌐 Check internet connection to CapsuleCRM
+- 🐍 Ensure Python 3.11+ is installed
+
+**📦 "No module found" errors:**
+- 🎁 Dependencies are bundled in the extension
+- 🔄 Try reinstalling the extension
+
+**⚠️ API errors:**
+- 🔐 Verify API key permissions in CapsuleCRM
+- 🚦 Check rate limits aren't exceeded
+
+**🐛 Debug Mode:**
+Set environment variable `LOG_LEVEL=DEBUG` for detailed logging.
 
 ## 🛡️ Security & Privacy
 
-- **Secure authentication**: Uses official CapsuleCRM API with token-based auth
-- **Read/write permissions**: Full control over your CRM data through AI
-- **No data storage**: Server acts as a real-time bridge, doesn't store your data
-- **Environment variables**: API tokens stored securely in environment variables
+- 🔐 Uses official CapsuleCRM API with secure token authentication
+- 🚫 No data storage - acts as real-time bridge
+- 🔒 Environment variables for secure token storage
+- ✅ Full read/write permissions as configured in CapsuleCRM
 
-## 🎉 Why Use This?
+## 📄 License
 
-Instead of clicking through CRM interfaces, you can now:
-- **Save time**: Get answers in seconds, not minutes
-- **Ask complex questions**: Combine multiple filters and searches naturally
-- **Automate workflows**: Let AI handle routine CRM tasks
-- **Stay in flow**: Work with your CRM data without context switching
-- **Discover insights**: Ask questions you might not have thought to explore in the UI
+MIT License - see [LICENSE](LICENSE) file for details.
 
-Transform your CRM experience from manual data entry to intelligent conversation! 🚀
+## 🏢 About
+
+Developed by [Monads AG](https://monads.ch) - specialists in AI automation and business process optimization.
 
 ---
 
-*Built with FastMCP and love for better CRM workflows* ❤️
+*Ready to transform your CRM experience? Let's make data management fun! 🎉🚀*

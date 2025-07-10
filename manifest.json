@@ -1,0 +1,155 @@
+{
+  "dxt_version": "0.1",
+  "name": "capsulecrm-mcp",
+  "display_name": "CapsuleCRM MCP",
+  "version": "0.1.0",
+  "description": "Connect Claude to your CapsuleCRM account for natural language customer and sales management",
+  "long_description": "Transform your CRM workflow with AI! This MCP server connects Claude directly to your CapsuleCRM account, enabling natural language interactions with customer data, sales opportunities, and task management. Ask questions like 'Show me all VIP customers from last month' or 'Create a new opportunity for Acme Corp' and let Claude handle the CRM operations for you.",
+  "author": {
+    "name": "Monads AG",
+    "url": "https://monads.ch",
+    "email": "info@monads.ch"
+  },
+  "homepage": "https://monads.ch",
+  "documentation": "https://github.com/MonadsAG/capsulecrm-mcp/blob/main/README.md",
+  "icon": "icon.png",
+  "keywords": ["crm", "capsule", "sales", "customer-management", "automation"],
+  "server": {
+    "type": "python",
+    "entry_point": "server/main.py",
+    "mcp_config": {
+      "command": "python",
+      "args": [
+        "${__dirname}/server/main.py"
+      ],
+      "env": {
+        "CAPSULECRM_ACCESS_TOKEN": "${user_config.api_key}",
+        "PYTHONPATH": "${__dirname}/server/lib"
+      }
+    }
+  },
+  "prompts": [
+    {
+      "name": "Customer Insights",
+      "description": "Get comprehensive insights about your customers and sales pipeline",
+      "text": "Show me all VIP customers from last month and their associated opportunities"
+    },
+    {
+      "name": "Sales Pipeline Review",
+      "description": "Review current sales opportunities and their status",
+      "text": "What's the total value of our open opportunities? Show me deals closing this quarter"
+    },
+    {
+      "name": "Task Management",
+      "description": "Manage and track tasks across your team",
+      "text": "What tasks are overdue? Show me all tasks assigned to Sarah"
+    },
+    {
+      "name": "New Opportunity Creation",
+      "description": "Create a new sales opportunity with AI assistance",
+      "text": "Create a new opportunity for Acme Corp worth $50,000 for our Q1 software project"
+    },
+    {
+      "name": "Customer Search",
+      "description": "Find specific customers or organizations",
+      "text": "Find all customers in New York that we haven't contacted in 30 days"
+    },
+    {
+      "name": "Pipeline Analysis",
+      "description": "Analyze your sales pipeline performance",
+      "text": "Which opportunities have the highest probability? Show me deals stuck in the proposal stage"
+    }
+  ],
+  "tools": [
+    {
+      "name": "list_parties_tool",
+      "description": "List all parties (people and organizations) from CapsuleCRM with pagination"
+    },
+    {
+      "name": "get_party_tool", 
+      "description": "Get a specific party (person or organization) by ID"
+    },
+    {
+      "name": "create_party_tool",
+      "description": "Create a new party (person or organization) in CapsuleCRM"
+    },
+    {
+      "name": "update_party_tool",
+      "description": "Update an existing party by ID"
+    },
+    {
+      "name": "search_parties_tool",
+      "description": "Search parties by name, address, phone number, or email address"
+    },
+    {
+      "name": "find_parties_tool",
+      "description": "Find parties with structured filters or free text search"
+    },
+    {
+      "name": "list_opportunities_tool",
+      "description": "List all sales opportunities from CapsuleCRM with pagination"
+    },
+    {
+      "name": "get_opportunity_tool",
+      "description": "Get a specific sales opportunity by ID with full details"
+    },
+    {
+      "name": "create_opportunity_tool",
+      "description": "Create a new sales opportunity with name, party, milestone, and value"
+    },
+    {
+      "name": "update_opportunity_tool",
+      "description": "Update an existing sales opportunity by ID"
+    },
+    {
+      "name": "search_opportunities_tool",
+      "description": "Search opportunities by name, description, or associated party details"
+    },
+    {
+      "name": "find_opportunities_tool",
+      "description": "Find opportunities with structured filters or free text search"
+    },
+    {
+      "name": "list_tasks_tool",
+      "description": "List tasks with filtering by status: 'open', 'completed', or 'pending'"
+    },
+    {
+      "name": "get_task_tool",
+      "description": "Get a specific task by ID with full details including due date and owner"
+    },
+    {
+      "name": "create_task_tool",
+      "description": "Create a new task with description, due date, and assignment details"
+    },
+    {
+      "name": "update_task_tool",
+      "description": "Update an existing task by ID, including status, due date, or assignment"
+    },
+    {
+      "name": "search_tasks_tool",
+      "description": "Search tasks by description, status, or associated party/opportunity"
+    },
+    {
+      "name": "find_tasks_tool",
+      "description": "Find tasks with structured filters or free text search"
+    },
+    {
+      "name": "list_milestones_tool",
+      "description": "List all pipeline milestones used for tracking opportunity progress"
+    }
+  ],
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "CapsuleCRM API Key",
+      "description": "Your CapsuleCRM API key. Get this from Account Settings → API in your CapsuleCRM dashboard.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MonadsAG/capsulecrm-mcp"
+  }
+}
