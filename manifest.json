@@ -12,6 +12,7 @@
   },
   "homepage": "https://monads.ch",
   "documentation": "https://github.com/MonadsAG/capsulecrm-mcp/blob/main/README.md",
+  "icon": "icon.png",
   "keywords": ["crm", "capsule", "sales", "customer-management", "automation"],
   "server": {
     "type": "python",
