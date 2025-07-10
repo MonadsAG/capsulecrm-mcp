@@ -24,7 +24,14 @@ def get_opportunity(opportunity_id: int) -> dict:
     return data["opportunity"]
 
 def create_opportunity(opportunity: OpportunityCreate) -> dict:
-    data = request("POST", "/opportunities", json={"opportunity": opportunity.dict(exclude_none=True)})
+    # Always send value.amount as per-unit value to Capsule.
+    # If value_type is 'total', convert total to per-unit by dividing by duration.
+    data_dict = opportunity.dict(exclude_none=True)
+    value_type = data_dict.pop('value_type', 'per_unit')
+    duration = data_dict.get('duration')
+    if value_type == 'total' and duration and data_dict['value']['amount'] is not None:
+        data_dict['value']['amount'] = data_dict['value']['amount'] / duration
+    data = request("POST", "/opportunities", json={"opportunity": data_dict})
     return data["opportunity"]
 
 def update_opportunity(opportunity_id: int, opportunity: OpportunityCreate) -> dict:

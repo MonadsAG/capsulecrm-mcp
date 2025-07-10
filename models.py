@@ -15,11 +15,13 @@ class OpportunityCreate(BaseModel):
     """
     OpportunityCreate Model
     Represents an opportunity to be created in Capsule. For reporting and value queries, the 'current_value' property should be used if present, as it reflects the probability-weighted value of the opportunity.
+    The 'value_type' field is required and must be either 'per_unit' (value.amount is per duration unit) or 'total' (value.amount is the total for all units).
     """
     name: str = Field(..., description="The name of this opportunity.")
     party: OpportunityParty = Field(..., description="The main contact (party) for this opportunity.")
     milestone: OpportunityMilestone = Field(..., description="The milestone this opportunity belongs to.")
     value: OpportunityValue = Field(..., description="The value of this opportunity (base amount). For reporting, use 'current_value' if present.")
+    value_type: str = Field(..., description="Required. 'per_unit' if value.amount is per duration unit (e.g. per month), 'total' if value.amount is the total for all units.")
     description: Optional[str] = Field(None, description="The description of this opportunity.")
     expectedCloseOn: Optional[str] = Field(None, description="The expected close date (ISO8601) of this opportunity.")
     probability: Optional[int] = Field(None, description="The probability (percentage) of winning this opportunity. Used to calculate 'current_value'.")
