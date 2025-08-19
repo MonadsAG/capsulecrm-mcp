@@ -1,4 +1,5 @@
 # 🚀 CapsuleCRM MCP Server
+[![Trust Score](https://archestra.ai/mcp-catalog/api/badge/quality/MonadsAG/capsulecrm-mcp)](https://archestra.ai/mcp-catalog/monadsag__capsulecrm-mcp)
 
 Transform your CRM workflow with AI! 🤖✨ Connect Claude directly to your CapsuleCRM account for natural language customer and sales management.
 
