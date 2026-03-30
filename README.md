@@ -113,3 +113,8 @@ Developed by [Monads AG](https://monads.ch) - specialists in AI automation and b
 ---
 
 *Ready to transform your CRM experience? Let's make data management fun! 🎉🚀*
+
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/monadsag-capsulecrm-mcp).
+
