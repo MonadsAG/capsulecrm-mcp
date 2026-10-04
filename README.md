@@ -17,6 +17,15 @@ Transform your CRM workflow with AI! 🤖✨ Connect Claude directly to your Cap
 3. 🔑 Enter your CapsuleCRM API key when prompted
 4. 🎊 Start using natural language CRM commands!
 
+### 💻 Command line (uvx)
+Runs the server over stdio without the `.dxt`, e.g. for an MCP hub. Pin a tag or commit:
+
+```bash
+CAPSULECRM_ACCESS_TOKEN=<your-token> uvx --from git+https://github.com/MonadsAG/capsulecrm-mcp@<tag> capsulecrm-mcp
+```
+
+From a local checkout: `uvx --from . capsulecrm-mcp`. Without `CAPSULECRM_ACCESS_TOKEN` the server exits with code 1.
+
 ## 🔑 Getting Your API Key
 
 1. 🌐 Log in to your CapsuleCRM dashboard
