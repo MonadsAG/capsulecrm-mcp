@@ -6,8 +6,22 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.116.0",
-    "fastmcp>=2.10.4",
+    "fastmcp>=2.10.4,<3",
     "httpx>=0.28.1",
     "pydantic>=2.11.7",
     "uvicorn>=0.35.0",
 ]
+
+[project.scripts]
+capsulecrm-mcp = "server.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# server/ stays where the .dxt manifest expects it and is packaged as-is. main.py
+# puts its own directory on sys.path, so the tools/ and api/ imports resolve the
+# same way in the .dxt and in the wheel. No path rewrite via `sources`: hatchling
+# cannot install a renamed package in editable mode, which `uv sync` needs.
+[tool.hatch.build.targets.wheel]
+packages = ["server"]

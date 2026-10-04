@@ -42,7 +42,6 @@ try:
     mcp = FastMCP(
         name="capsulecrm-mcp",
         instructions="Use these tools to manage opportunities, parties (customers), and tasks in CapsuleCRM. Support both simple queries and advanced filtering.",
-        dependencies=["fastapi", "httpx", "pydantic", "fastmcp"]
     )
     
     # Register all tools by entity
@@ -61,7 +60,8 @@ except Exception as e:
     logger.error(f"Failed to initialize server: {e}")
     sys.exit(1)
 
-if __name__ == "__main__":
+def main():
+    """Entry point for the .dxt (python server/main.py) and the capsulecrm-mcp script."""
     try:
         # FastMCP automatically uses stdio transport for MCP protocol
         mcp.run()
@@ -70,3 +70,6 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Server error: {e}")
         sys.exit(1)
+
+if __name__ == "__main__":
+    main()
